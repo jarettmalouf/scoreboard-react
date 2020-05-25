@@ -1,10 +1,10 @@
 import "./style.css";
 
-import App from "./App";
-import Contact from "./ContactPage";
+import App from "./Pages/App";
+import Contact from "./Pages/ContactPage";
 import React from "react";
 import { Route } from "react-router-dom";
-import Sports from "./Sports";
+import Sports from "./Pages/Sports";
 
 function Counter() {
   return (

@@ -1,8 +1,8 @@
-import Footer from "./components/footer";
-import NavBar from "./components/navBar";
+import Footer from "../components/footer";
+import NavBar from "../components/navBar";
 import React from "react";
-import SportsList from "./components/sportsList";
-import TitleBar from "./components/titleBar";
+import SportsList from "../components/sportsList";
+import TitleBar from "../components/titleBar";
 
 function Sports() {
   return (

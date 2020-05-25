@@ -1,8 +1,8 @@
-import Contacts from "./components/contacts";
-import Footer from "./components/footer";
-import NavBar from "./components/navBar";
+import Contacts from "../components/contacts";
+import Footer from "../components/footer";
+import NavBar from "../components/navBar";
 import React from "react";
-import TitleBar from "./components/titleBar";
+import TitleBar from "../components/titleBar";
 
 function ContactPage() {
   return (
