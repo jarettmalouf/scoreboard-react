@@ -1,3 +1,5 @@
+import "./index.css";
+
 import React, { Component } from "react";
 
 import Contact from "./contact";
@@ -30,12 +32,8 @@ class Contacts extends Component {
     return (
       <React.Fragment>
         <div className="contact-page">
-          {this.state.contacts.map((c) => (
-            <Contact
-              imageUrl={c.imageUrl}
-              imageCaption={c.imageCaption}
-              bio={c.bio}
-            />
+          {this.state.contacts.map((contact) => (
+            <Contact {...contact} />
           ))}
         </div>
       </React.Fragment>

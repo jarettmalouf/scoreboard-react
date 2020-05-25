@@ -1,0 +1,22 @@
+ul {
+  list-style-type: none;
+}
+
+nav ul {
+  text-align: left;
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 20px;
+  padding: 2px;
+}
+
+header a {
+  color: rgb(47, 179, 240);
+  text-decoration: none;
+}
+
+a:hover {
+  color: green;
+}

@@ -1,0 +1,50 @@
+/* SCOREBOARD */
+
+.player {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 10px 50px;
+  position: relative;
+}
+
+.badge.m-2 {
+  background-color: rgb(47, 179, 240);
+  color: white;
+  display: flex;
+  font-size: 100px;
+  justify-content: center;
+  width: 150px;
+}
+
+button {
+  background-color: rgb(47, 179, 240);
+  border-color: rgb(47, 179, 240);
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 25px;
+}
+
+button:active {
+  outline: none;
+  transform: translateY(1px);
+}
+
+.buttons {
+  position: relative;
+  justify-content: center;
+  display: flex;
+}
+
+.scores {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.reset-button {
+  display: flex;
+  padding: 20px;
+  justify-content: center;
+}

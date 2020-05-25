@@ -1,3 +1,5 @@
+import "./index.css";
+
 import React, { Component } from "react";
 
 import Score from "./score";
@@ -11,25 +13,20 @@ class ScoreBoard extends Component {
   };
 
   handleIncrement = (score) => {
-    console.log(score);
-    const scores = [...this.state.scores];
-    const index = scores.indexOf(score);
-    scores[index].value++;
+    const scores = this.state.scores.map((s) =>
+      s.id === score.id ? { ...s, value: s.value + 1 } : { ...s }
+    );
     this.setState({ scores });
   };
 
   handleDecrement = (score) => {
-    console.log(score);
-    const scores = [...this.state.scores];
-    const index = scores.indexOf(score);
-    if (scores[index].value > 0) {
-      scores[index].value--;
-    }
+    const scores = this.state.scores.map((s) =>
+      s.id === score.id ? { ...s, value: s.value - 1 } : { ...s }
+    );
     this.setState({ scores });
   };
 
   handleReset = () => {
-    console.log(this.state.scores);
     const scores = this.state.scores.map((s) => {
       s.value = 0;
       return s;
@@ -45,8 +42,8 @@ class ScoreBoard extends Component {
             <Score
               key={score.id}
               score={score}
-              onIncrement={this.handleIncrement}
-              onDecrement={this.handleDecrement}
+              onIncrement={() => this.handleIncrement(score)}
+              onDecrement={() => this.handleDecrement(score)}
             />
           ))}
         </div>

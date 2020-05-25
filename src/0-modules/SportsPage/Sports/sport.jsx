@@ -1,11 +1,13 @@
+import "./index.css";
+
 import React from "react";
 
 function Sport(props) {
   return (
-    <div>
+    <div className="sport">
       <img src={props.imageUrl} alt={props.imageCaption}></img>
       <h3>{props.sportName}</h3>
-      <ul>
+      <ul className="rules">
         {props.rules.map((rule) => (
           <li>{rule}</li>
         ))}

@@ -1,19 +1,12 @@
-.Counter {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  top: 0;
-
+.Main-Page {
   background: rgb(151, 234, 245);
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
   color: rgb(47, 179, 240);
-  margin: auto;
   padding: 0;
-}
-
-.App {
-  text-align: center;
-  display: flex;
 }
 
 .App-logo {
@@ -70,28 +63,7 @@
   }
 }
 
-/* HEADER */
-
-header {
-  height: 200px;
-  padding: 20px;
-}
-
-h1 {
-  background-color: rgb(47, 179, 240);
-  border-radius: 50px 20px 50px 20px;
-  height: 100px;
-  margin: 50px 50px 50px 50px;
-  text-align: center;
-  font-size: 80px;
-}
-
-@media screen and (max-width: 625px) {
-  h1 {
-    font-size: 50px;
-    height: 67px;
-  }
-}
+/* NAVBAR */
 
 ul {
   list-style-type: none;
@@ -175,11 +147,13 @@ button:active {
   font-size: 16px;
   justify-content: center;
   padding: 20px;
+  position: relative;
   text-align: center;
 }
 
 .sports img {
   height: 100px;
+  margin: 20px;
 }
 
 /* CONTACT PAGE */
@@ -192,21 +166,23 @@ button:active {
 }
 
 .profile {
-  height: 400px;
+  height: 280px;
+  position: relative;
 }
 
-.centered-row {
-  display: flex;
-  padding: 20px;
+.contact {
+  padding: 0 20px;
   justify-content: center;
 }
 
-.contact .profile {
-  text-align: center;
+.bio {
+  padding-left: 0px;
+  margin-bottom: 0px;
 }
 
 .contact .bio {
   text-align: left;
+  position: relative;
 }
 
 .contact .bio .name {
