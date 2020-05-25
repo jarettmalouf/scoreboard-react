@@ -8,17 +8,17 @@ function NavBar() {
     <nav className="navbar">
       <ul>
         <li>
-          <Link exact to="/home">
+          <Link exact="true" to="/home">
             Home
           </Link>
         </li>
         <li>
-          <Link exact to="/sports">
+          <Link exact="true" to="/sports">
             Sports
           </Link>
         </li>
         <li>
-          <Link exact to="/contact">
+          <Link exact="true" to="/contact">
             Contact
           </Link>
         </li>
