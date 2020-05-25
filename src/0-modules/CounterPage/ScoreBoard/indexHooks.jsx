@@ -32,7 +32,7 @@ function ScoreBoard() {
 
   function handleReset() {
     let resetScores = scores.map((score) => (score.value = 0));
-    return setScores(resetScores);
+    return setScores((currentScores) => ({ ...currentScores, resetScores }));
   }
 
   return (
@@ -42,8 +42,8 @@ function ScoreBoard() {
           <Score
             key={score.id}
             score={score}
-            onIncrement={() => handleIncrement(score)}
-            onDecrement={() => handleDecrement(score)}
+            onIncrement={(score) => handleIncrement(score)}
+            onDecrement={(score) => handleDecrement(score)}
           />
         ))}
       </div>
