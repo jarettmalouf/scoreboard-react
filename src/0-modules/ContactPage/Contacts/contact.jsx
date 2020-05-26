@@ -33,9 +33,10 @@ const Person = styled.div`
 `;
 
 const Bio = styled.ul`
+  list-style-type: none;
   padding: 20px;
-  text-align: left;
   position: relative;
+  text-align: left;
 `;
 
 const Name = styled.li`

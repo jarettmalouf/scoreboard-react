@@ -27,7 +27,6 @@ export default function NavBar() {
 }
 
 const NavItemsList = styled.ul`
-  list-style-type: none;
   text-align: left;
 `;
 

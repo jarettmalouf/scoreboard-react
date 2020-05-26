@@ -23,6 +23,7 @@ const SportDiv = styled.div`
 
 const Rules = styled.ul`
   padding-left: 0;
+  list-style-type: none;
 `;
 
 const SportsIcon = styled.img`

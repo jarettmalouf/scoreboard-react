@@ -48,7 +48,9 @@ export default function ScoreBoard() {
         ))}
       </Scores>
       <ResetWrapper>
-        <Button onClick={() => handleReset()}>Reset</Button>
+        <Button className="btn btn-sm m-2" onClick={() => handleReset()}>
+          Reset
+        </Button>
       </ResetWrapper>
     </React.Fragment>
   );
