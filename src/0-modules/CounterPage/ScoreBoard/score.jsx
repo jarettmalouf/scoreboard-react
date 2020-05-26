@@ -1,25 +1,62 @@
 import React from "react";
+import styled from "@emotion/styled";
 
-function Score(props) {
+export default function Score(props) {
   return (
-    <div className="player">
-      <span className="badge m-2">{props.score.value}</span>
-      <div className="buttons">
-        <button
+    <Player className="player">
+      <Count className="badge m-2">{props.score.value}</Count>
+      <Buttons className="buttons">
+        <Button
           onClick={() => props.onIncrement(props.score)}
           className="btn btn-lg m-2"
         >
           +
-        </button>
-        <button
+        </Button>
+        <Button
           onClick={() => props.onDecrement(props.score)}
           className="btn btn-lg m-2"
         >
           -
-        </button>
-      </div>
-    </div>
+        </Button>
+      </Buttons>
+    </Player>
   );
 }
 
-export default Score;
+/* SCORE CSS */
+
+const Player = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 10px 50px;
+  position: relative;
+`;
+
+const Count = styled.div`
+  background-color: rgb(47, 179, 240);
+  color: white;
+  display: flex;
+  font-size: 100px;
+  justify-content: center;
+  width: 150px;
+`;
+
+const Button = styled.button`
+  background-color: rgb(47, 179, 240);
+  border-color: rgb(47, 179, 240);
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 25px;
+  :active {
+    outline: none;
+    transform: translateY(1px);
+  }
+`;
+
+const Buttons = styled.div`
+  position: relative;
+  justify-content: center;
+  display: flex;
+`;

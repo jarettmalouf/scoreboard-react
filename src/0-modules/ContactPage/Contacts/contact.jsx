@@ -1,16 +1,43 @@
 import React from "react";
+import styled from "@emotion/styled";
 
-function Contact(props) {
+export default function Contact(props) {
   return (
-    <div className="contact">
-      <img className="profile" src={props.imageUrl} alt={props.imageCaption} />
-      <ul className="bio">
-        <li className="name">{props.bio.name}</li>
+    <Person className="person">
+      <Profile
+        className="profile"
+        src={props.imageUrl}
+        alt={props.imageCaption}
+      />
+      <Bio className="bio">
+        <Name className="name">{props.bio.name}</Name>
         <li className="hometown">Hometown: {props.bio.hometown}</li>
         <li className="skills">Skills: {props.bio.skills}</li>
-      </ul>
-    </div>
+      </Bio>
+    </Person>
   );
 }
 
-export default Contact;
+/* CONTACT PAGE CSS */
+
+const Profile = styled.img`
+  height: 300px;
+  position: relative;
+`;
+
+const Person = styled.div`
+  padding: 0 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+`;
+
+const Bio = styled.ul`
+  padding: 20px;
+  text-align: left;
+  position: relative;
+`;
+
+const Name = styled.li`
+  font-size: 30px;
+`;

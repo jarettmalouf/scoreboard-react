@@ -1,63 +1,88 @@
-import "./index.css";
+import React, { useState } from "react";
 
-import React, { Component } from "react";
+import Score from "./Score";
+import styled from "@emotion/styled";
 
-import Score from "./score";
+export default function ScoreBoard() {
+  const [scores, setScores] = useState([
+    { id: 1, value: 0 },
+    { id: 2, value: 0 },
+  ]);
 
-class ScoreBoard extends Component {
-  state = {
-    scores: [
-      { id: 1, value: 0 },
-      { id: 2, value: 0 },
-    ],
-  };
+  // useEffect(() => alert("Score changed"), [scores]);
 
-  handleIncrement = (score) => {
-    const scores = this.state.scores.map((s) =>
-      s.id === score.id ? { ...s, value: s.value + 1 } : { ...s }
-    );
-    this.setState({ scores });
-  };
-
-  handleDecrement = (score) => {
-    const scores = this.state.scores.map((s) =>
-      s.id === score.id ? { ...s, value: s.value - 1 } : { ...s }
-    );
-    this.setState({ scores });
-  };
-
-  handleReset = () => {
-    const scores = this.state.scores.map((s) => {
-      s.value = 0;
-      return s;
-    });
-    this.setState({ scores });
-  };
-
-  render() {
-    return (
-      <React.Fragment>
-        <div className="scores">
-          {this.state.scores.map((score) => (
-            <Score
-              key={score.id}
-              score={score}
-              onIncrement={() => this.handleIncrement(score)}
-              onDecrement={() => this.handleDecrement(score)}
-            />
-          ))}
-        </div>
-        <div className="reset-button">
-          <button
-            className="btn btn-secondary btn-sm m-2"
-            onClick={() => this.handleReset()}
-          >
-            Reset
-          </button>
-        </div>
-      </React.Fragment>
-    );
+  function handleIncrement(score) {
+    const newScores = [...scores];
+    let scoreToIncrement = newScores.find((s) => s.id === score.id);
+    scoreToIncrement.value++;
+    setScores(newScores);
   }
+
+  function handleDecrement(score) {
+    if (score.value < 1) {
+      return;
+    }
+    const newScores = [...scores];
+    let scoreToIncrement = newScores.find((s) => s.id === score.id);
+    scoreToIncrement.value--;
+    setScores(newScores);
+  }
+
+  function handleReset() {
+    let resetScores = [...scores];
+    resetScores.map((score) => (score.value = 0));
+    setScores(resetScores);
+  }
+
+  return (
+    <React.Fragment>
+      <Scores className="scores">
+        {scores.map((score) => (
+          <Score
+            key={score.id}
+            score={score}
+            onIncrement={(score) => handleIncrement(score)}
+            onDecrement={(score) => handleDecrement(score)}
+          />
+        ))}
+      </Scores>
+      <ResetWrapper>
+        <ResetButton className="reset-button">
+          <Button onClick={() => handleReset()}>Reset</Button>
+        </ResetButton>
+      </ResetWrapper>
+    </React.Fragment>
+  );
 }
 
-export default ScoreBoard;
+// SCOREBOARD CSS
+
+const Scores = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+`;
+
+const ResetButton = styled.button`
+  display: flex;
+  padding: 100px;
+  justify-content: center;
+`;
+
+const Button = styled.button`
+  background-color: rgb(47, 179, 240);
+  border-color: rgb(47, 179, 240);
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 25px;
+  :active {
+    outline: none;
+    transform: translateY(1px);
+  }
+`;
+
+const ResetWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+`;

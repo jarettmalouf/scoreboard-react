@@ -1,19 +1,33 @@
 import "./index.css";
 
 import React from "react";
+import styled from "@emotion/styled";
 
-function Sport(props) {
+export default function Sport(props) {
   return (
-    <div className="sport">
-      <img src={props.imageUrl} alt={props.imageCaption}></img>
+    <SportDiv className="sport">
+      <SportsIcon src={props.imageUrl} alt={props.imageCaption}></SportsIcon>
       <h3>{props.sportName}</h3>
-      <ul className="rules">
+      <Rules className="rules">
         {props.rules.map((rule) => (
           <li>{rule}</li>
         ))}
-      </ul>
-    </div>
+      </Rules>
+    </SportDiv>
   );
 }
 
-export default Sport;
+/* SPORTS */
+
+const SportDiv = styled.div`
+  padding: 0 30px;
+`;
+
+const Rules = styled.ul`
+  padding-left: 0;
+`;
+
+const SportsIcon = styled.img`
+  height: 100px;
+  margin: 20px;
+`;

@@ -1,44 +1,46 @@
-import "./index.css";
-
-import React, { Component } from "react";
+import React, { useState } from "react";
 
 import Contact from "./contact";
+import styled from "@emotion/styled";
 
-class Contacts extends Component {
-  state = {
-    contacts: [
-      {
-        imageUrl: "../images/jarett.jpeg",
-        imageCaption: "The only good photo of Jarett Malouf",
-        bio: {
-          name: "Jarett Malouf",
-          hometown: "Los Angeles, CA",
-          skills: "Can increment any number by 1",
-        },
+export default function Contacts() {
+  const [contacts] = useState([
+    {
+      imageUrl: "../images/jarett.jpeg",
+      imageCaption: "The only good photo of Jarett Malouf",
+      bio: {
+        name: "Jarett Malouf",
+        hometown: "Los Angeles, CA",
+        skills: "Can increment any number by 1",
       },
-      {
-        imageUrl: "../images/benji.jpg",
-        imageCaption: "A classically good photo of Benji Bear",
-        bio: {
-          name: "Benji Bear",
-          hometown: "Rockford, IL",
-          skills: "Can do basically anything",
-        },
+    },
+    {
+      imageUrl: "../images/benji.jpg",
+      imageCaption: "A classically good photo of Benji Bear",
+      bio: {
+        name: "Benji Bear",
+        hometown: "Rockford, IL",
+        skills: "Can do basically anything",
       },
-    ],
-  };
+    },
+  ]);
 
-  render() {
-    return (
-      <React.Fragment>
-        <div className="contact-page">
-          {this.state.contacts.map((contact) => (
-            <Contact {...contact} />
-          ))}
-        </div>
-      </React.Fragment>
-    );
-  }
+  return (
+    <React.Fragment>
+      <ContactPage className="contact-page">
+        {contacts.map((contact) => (
+          <Contact {...contact} />
+        ))}
+      </ContactPage>
+    </React.Fragment>
+  );
 }
 
-export default Contacts;
+/* CONTACT PAGE */
+
+const ContactPage = styled.div`
+  color: rgb(47, 179, 240);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+`;

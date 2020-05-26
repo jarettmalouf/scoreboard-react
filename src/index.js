@@ -2,7 +2,7 @@ import "bootstrap/dist/css/bootstrap.css";
 
 import * as serviceWorker from "./serviceWorker";
 
-import App from "./0-modules/App";
+import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import React from "react";
 import ReactDOM from "react-dom";
