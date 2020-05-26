@@ -1,18 +1,24 @@
-import "./index.css";
-
 import React from "react";
 import styled from "@emotion/styled";
 
 export default function Footer() {
-  return <TrademarkFooter>Scoreboard, Inc. © 2020</TrademarkFooter>;
+  return (
+    <Container>
+      <TrademarkFooter>Scoreboard, Inc. © 2020</TrademarkFooter>
+    </Container>
+  );
 }
 
 const TrademarkFooter = styled.footer`
   background: grey;
+  bottom: 0;
   color: white;
   padding: 20px;
-  text-align: center;
   position: absolute;
+  text-align: center;
   width: 100%;
-  bottom: 0;
+`;
+
+const Container = styled.div`
+  padding-top: 40px;
 `;

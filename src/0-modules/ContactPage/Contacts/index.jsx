@@ -43,4 +43,5 @@ const ContactPage = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
+  padding-bottom: 80px;
 `;

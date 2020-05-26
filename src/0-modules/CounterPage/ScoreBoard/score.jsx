@@ -1,3 +1,4 @@
+import { Button } from "../../../1-helpers/buttons";
 import React from "react";
 import styled from "@emotion/styled";
 
@@ -5,7 +6,7 @@ export default function Score(props) {
   return (
     <Player className="player">
       <Count className="badge m-2">{props.score.value}</Count>
-      <Buttons className="buttons">
+      <ButtonsWrapper className="buttons">
         <Button
           onClick={() => props.onIncrement(props.score)}
           className="btn btn-lg m-2"
@@ -18,7 +19,7 @@ export default function Score(props) {
         >
           -
         </Button>
-      </Buttons>
+      </ButtonsWrapper>
     </Player>
   );
 }
@@ -42,20 +43,7 @@ const Count = styled.div`
   width: 150px;
 `;
 
-const Button = styled.button`
-  background-color: rgb(47, 179, 240);
-  border-color: rgb(47, 179, 240);
-  border-radius: 5px;
-  color: white;
-  cursor: pointer;
-  font-size: 25px;
-  :active {
-    outline: none;
-    transform: translateY(1px);
-  }
-`;
-
-const Buttons = styled.div`
+const ButtonsWrapper = styled.div`
   position: relative;
   justify-content: center;
   display: flex;

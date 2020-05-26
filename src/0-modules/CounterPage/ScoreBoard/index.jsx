@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+import { Button } from "../../../1-helpers/buttons";
 import Score from "./Score";
 import styled from "@emotion/styled";
 
@@ -47,9 +48,7 @@ export default function ScoreBoard() {
         ))}
       </Scores>
       <ResetWrapper>
-        <ResetButton className="reset-button">
-          <Button onClick={() => handleReset()}>Reset</Button>
-        </ResetButton>
+        <Button onClick={() => handleReset()}>Reset</Button>
       </ResetWrapper>
     </React.Fragment>
   );
@@ -63,26 +62,8 @@ const Scores = styled.div`
   justify-content: center;
 `;
 
-const ResetButton = styled.button`
-  display: flex;
-  padding: 100px;
-  justify-content: center;
-`;
-
-const Button = styled.button`
-  background-color: rgb(47, 179, 240);
-  border-color: rgb(47, 179, 240);
-  border-radius: 5px;
-  color: white;
-  cursor: pointer;
-  font-size: 25px;
-  :active {
-    outline: none;
-    transform: translateY(1px);
-  }
-`;
-
 const ResetWrapper = styled.div`
   display: flex;
+  padding: 0 0 40px 0;
   justify-content: center;
 `;

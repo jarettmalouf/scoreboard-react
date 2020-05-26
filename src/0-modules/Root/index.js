@@ -27,13 +27,11 @@ function Root() {
 
 const MainPage = styled.div`
   background: rgb(151, 234, 245);
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
   color: rgb(47, 179, 240);
+  min-height: 100vh;
+  min-width: 100vh;
   padding: 0;
+  position: relative;
 `;
 
 export default Root;

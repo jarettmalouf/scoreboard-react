@@ -1,5 +1,3 @@
-import "./index.css";
-
 import React, { useState } from "react";
 
 import Sport from "./Sport";
@@ -54,14 +52,14 @@ export default function SportsList() {
   );
 }
 
-// CSS
+// Sports CSS
 
 const Sports = styled.div`
   display: flex;
   flex-wrap: wrap;
   font-size: 16px;
   justify-content: center;
-  padding: 20px;
+  padding: 20px 20px 40px 20px;
   position: relative;
   text-align: center;
 `;
