@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import Contact from "./contact";
+import Contact from "./Contact";
 import styled from "@emotion/styled";
 
 export default function Contacts() {

@@ -2,7 +2,7 @@ import "./index.css";
 
 import React, { useState } from "react";
 
-import Sport from "./sport";
+import Sport from "./Sport";
 import styled from "@emotion/styled";
 
 export default function SportsList() {

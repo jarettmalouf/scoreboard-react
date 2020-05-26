@@ -1,5 +1,5 @@
 import React from "react";
-import ScoreBoard from "./ScoreBoard/Index";
+import ScoreBoard from "./ScoreBoard";
 import TitleBar from "../../1-helpers/TitleBar";
 
 function Counter() {
