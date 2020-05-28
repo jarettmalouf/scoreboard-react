@@ -5,18 +5,12 @@ import styled from "@emotion/styled";
 export default function Score(props) {
   return (
     <Player className="player">
-      <Count className="badge m-2">{props.score.value}</Count>
+      <Count className="badge m-2">{props.player.value}</Count>
       <ButtonsWrapper className="buttons">
-        <Button
-          onClick={() => props.onIncrement(props.score)}
-          className="btn btn-lg m-2"
-        >
+        <Button onClick={() => props.onIncrement()} className="btn btn-lg m-2">
           +
         </Button>
-        <Button
-          onClick={() => props.onDecrement(props.score)}
-          className="btn btn-lg m-2"
-        >
+        <Button onClick={() => props.onDecrement()} className="btn btn-lg m-2">
           -
         </Button>
       </ButtonsWrapper>

@@ -1,40 +1,25 @@
-import React, { useState } from "react";
-
 import Contact from "./Contact";
+import React from "react";
+import { connect } from "react-redux";
 import styled from "@emotion/styled";
 
-export default function Contacts() {
-  const [contacts] = useState([
-    {
-      imageUrl: "../images/jarett.jpeg",
-      imageCaption: "The only good photo of Jarett Malouf",
-      bio: {
-        name: "Jarett Malouf",
-        hometown: "Los Angeles, CA",
-        skills: "Can increment any number by 1",
-      },
-    },
-    {
-      imageUrl: "../images/benji.jpg",
-      imageCaption: "A classically good photo of Benji Bear",
-      bio: {
-        name: "Benji Bear",
-        hometown: "Rockford, IL",
-        skills: "Can do basically anything",
-      },
-    },
-  ]);
-
+export function Contacts(props) {
   return (
     <React.Fragment>
       <ContactPage className="contact-page">
-        {contacts.map((contact) => (
+        {props.contacts.map((contact) => (
           <Contact {...contact} />
         ))}
       </ContactPage>
     </React.Fragment>
   );
 }
+
+// REDUX
+
+const mapStateToProps = (state) => {
+  return { contacts: state.contacts };
+};
 
 /* CONTACT PAGE */
 
@@ -45,3 +30,5 @@ const ContactPage = styled.div`
   justify-content: center;
   padding-bottom: 80px;
 `;
+
+export default connect(mapStateToProps)(Contacts);
