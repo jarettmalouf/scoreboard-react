@@ -1,0 +1,203 @@
+.Main-Page {
+  background: rgb(151, 234, 245);
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  color: rgb(47, 179, 240);
+  padding: 0;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* TITLE BAR */
+
+.title-bar h1 {
+  background-color: rgb(47, 179, 240);
+  color: white;
+  border-radius: 50px 20px 50px 20px;
+  height: 100px;
+  margin: 50px 50px 50px 50px;
+  text-align: center;
+  font-size: 80px;
+}
+
+@media screen and (max-width: 625px) {
+  .title-bar h1 {
+    font-size: 50px;
+    height: 67px;
+  }
+}
+
+/* NAVBAR */
+
+ul {
+  list-style-type: none;
+}
+
+nav ul {
+  text-align: left;
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 20px;
+  padding: 2px;
+}
+
+header a {
+  color: rgb(47, 179, 240);
+  text-decoration: none;
+}
+
+a:hover {
+  color: green;
+}
+
+/* SCOREBOARD */
+
+.player {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 10px 50px;
+  position: relative;
+}
+
+.badge.m-2 {
+  background-color: rgb(47, 179, 240);
+  color: white;
+  display: flex;
+  font-size: 100px;
+  justify-content: center;
+  width: 150px;
+}
+
+button {
+  background-color: rgb(47, 179, 240);
+  border-color: rgb(47, 179, 240);
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 25px;
+}
+
+button:active {
+  outline: none;
+  transform: translateY(1px);
+}
+
+.buttons {
+  position: relative;
+  justify-content: center;
+  display: flex;
+}
+
+.scores {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.reset-button {
+  display: flex;
+  padding: 20px;
+  justify-content: center;
+}
+
+/* SPORTS */
+
+.sports {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 16px;
+  justify-content: center;
+  padding: 20px;
+  position: relative;
+  text-align: center;
+}
+
+.sports img {
+  height: 100px;
+  margin: 20px;
+}
+
+/* CONTACT PAGE */
+
+.contact-page {
+  color: rgb(47, 179, 240);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.profile {
+  height: 280px;
+  position: relative;
+}
+
+.contact {
+  padding: 0 20px;
+  justify-content: center;
+}
+
+.bio {
+  padding-left: 0px;
+  margin-bottom: 0px;
+}
+
+.contact .bio {
+  text-align: left;
+  position: relative;
+}
+
+.contact .bio .name {
+  font-size: 30px;
+}
+
+/* FOOTER */
+
+footer {
+  background: grey;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}

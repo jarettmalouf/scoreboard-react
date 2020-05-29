@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Counter</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="pages/sports.html">Sports</a></li>
+          <li><a href="pages/contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <section class="title-bar">
+        <h1>
+          <em>scoreboard!</em>
+        </h1>
+      </section>
+    </header>
+    <!-- 
+        Consider restructuring things so the buttons related to each score are in the same parent div
+        the buttons wrapper below is vague since  it's unclear which - + buttons correlate to what
+    -->
+    <section class="scoreboard">
+      <section class="score">
+        <div class="score-num">0</div>
+        <div class="score-changers">
+          <button class="decrement">-</button>
+          <button class="increment">+</button>
+        </div>
+      </section>
+
+      <section class="score">
+        <div class="versus">-</div>
+        <div class="score-changers">
+          <button class="reset">reset</button>
+        </div>
+      </section>
+
+      <section class="score">
+        <div class="score-num">0</div>
+        <div class="score-changers">
+          <button class="decrement">-</button>
+          <button class="increment">+</button>
+        </div>
+      </section>
+    </section>
+    <footer>Scoreboard, Inc. © 2020</footer>
+  </body>
+</html>
