@@ -10,26 +10,30 @@ const players = [
 ];
 
 app.get("/", (req, res) => {
-  res.json({ players });
+  res.send({ players });
 });
 
 app.get("/reset", (req, res) => {
   players.forEach((player) => (player.value = 0));
-  res.json({ players });
+  res.send({ players });
 });
 
 app.get("/increment/:id", (req, res) => {
-  players.forEach((player) =>
-    player.id == req.params.id ? player.value++ : null
-  );
-  res.json({ players });
+  players.forEach((player) => {
+    if (player.id === parseInt(req.params.id)) {
+      player.value++;
+    }
+  });
+  res.send({ players });
 });
 
 app.get("/decrement/:id", (req, res) => {
-  players.forEach((player) =>
-    player.id == req.params.id && player.value > 0 ? player.value-- : null
-  );
-  res.json({ players });
+  players.forEach((player) => {
+    if (player.id === parseInt(req.params.id) && player.value > 0) {
+      player.value--;
+    }
+  });
+  res.send({ players });
 });
 
 function allowCrossOrigin(req, res, next) {
